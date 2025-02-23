@@ -158,11 +158,10 @@ namespace Task3_12
                             word3 = "";
                             break;
                     }
+                    Console.WriteLine((digit2 == 1) ? $"{word1} {word23}" : $"{word1} {word2} {word3}");
                 }
-
-                Console.WriteLine((digit2 == 1) ? $"{word1} {word23}": $"{word1} {word2} {word3}");
-                Console.ReadKey();
             }
+            Console.ReadKey();
         }
     }
 }
