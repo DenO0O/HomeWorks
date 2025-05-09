@@ -22,7 +22,7 @@ namespace Task13_3
 
                 Console.WriteLine($"Битва начинается! {player.Name} против {monster.Name}!");
 
-                while (isContinue && player.Health > 0 && monster.Health > 0)
+                while (isContinue && player.IsAlive && monster.IsAlive)
                 {
                     Console.WriteLine("Ваш ход (1  Атаковать / 2 - Использовать зелье здоровья / 0 - Закончить бой):");
                     switch (Console.ReadLine())
@@ -41,7 +41,7 @@ namespace Task13_3
                     }
                     if (!isContinue) break;
 
-                    if (monster.Health > 0) //Монстр не будет атаковать, если уже умер
+                    if (monster.IsAlive) //Монстр не будет атаковать, если уже умер
                     {
                         Console.WriteLine($"Ход {monster.Name}");
                         Console.WriteLine(monster.Attack(player));
@@ -51,9 +51,9 @@ namespace Task13_3
 
                 if (isContinue == false)
                     Console.WriteLine("Бой прерван");
-                else if (player.Health <= 0)
+                else if (!player.IsAlive)
                     Console.WriteLine($"{player.Name} проиграл");
-                else if (monster.Health <= 0)
+                else if (!monster.IsAlive)
                     Console.WriteLine($"{player.Name} выиграл");
 
                 Console.WriteLine($"Сыграем снова? (1 - Да; Любой символ - Нет)");
@@ -82,7 +82,7 @@ abstract class Character
     public virtual string Attack(Character target)
     {
         target.Health -= Damage;
-        if (target.Health <= 0) IsAlive = false;
+        if (target.Health <= 0) target.IsAlive = false;
         return $"{Name} наносит {Damage} урона {target.Name}!";
     }
 }
