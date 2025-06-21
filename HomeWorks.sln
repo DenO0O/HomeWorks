@@ -60,7 +60,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task2", "Task2", "{30C96DDF-7732-469F-88C5-E4747B6785D7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task3", "Task3", "{1CAE2B6C-D3CF-4C5E-B89F-AAF14FD3CA7E}"
-
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task5", "Task5", "{109C8392-FBD9-4D19-AAED-C54C7507053B}"
 EndProject
@@ -282,6 +281,5 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EB5973FD-3691-4557-BE24-4DA07FF4190B}
-
 	EndGlobalSection
 EndGlobal
